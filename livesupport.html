@@ -30,6 +30,14 @@
       font-size: 18px;
     }
 
+    iframe {
+      width: 90%;
+      height: 600px;
+      border: none;
+      border-radius: 10px;
+      margin-top: 30px;
+    }
+
     a button {
       margin-top: 40px;
       background-color: #2a5a2a;
@@ -54,19 +62,10 @@
 
   <p>Chat with a RatLabs specialist below. We're here to help you with your custom PC build!</p>
 
-  <!-- 👇 Tawk.to floating chat script -->
-  <script type="text/javascript">
-    var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
-    (function(){
-      var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
-      s1.async=true;
-      s1.src='https://embed.tawk.to/68f471007d479d194d3b7708/1j7tdiqsc';
-      s1.charset='UTF-8';
-      s1.setAttribute('crossorigin','*');
-      s0.parentNode.insertBefore(s1,s0);
-    })();
-  </script>
+  <!-- Inline chat embed -->
+  <iframe src="https://tawk.to/chat/68f471007d479d194d3b7708/1j7tdiqsc"></iframe>
 
+  <br>
   <a href="index.html">
     <button>Go back to home</button>
   </a>
