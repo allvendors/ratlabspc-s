@@ -1,138 +1,81 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-AU">
 <head>
-  <meta charset="UTF-8" />
-  <title>Live Support | RatLabs</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Live Support Chat - RatLabs PC's</title>
   <style>
     body {
-      background-color: #121212;
-      color: #f4f4f4;
-      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      height: 100vh;
+      font-family: Arial, sans-serif;
+      background-color: #0d0d0d;
+      color: #f1f1f1;
       text-align: center;
       margin: 0;
+      padding: 0;
+    }
+
+    header {
+      background: linear-gradient(90deg, #0f0f0f, #224422);
+      padding: 20px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
     }
 
     h1 {
-      color: #86ff86;
-      margin-bottom: 10px;
+      margin: 0;
+      color: #b8ffb8;
     }
 
     p {
-      color: #c8ffc8;
-      margin-bottom: 30px;
-    }
-
-    .chat-box {
-      width: 90%;
-      max-width: 600px;
-      background-color: #1c1c1c;
-      border: 1px solid #3ca866;
-      border-radius: 12px;
-      box-shadow: 0 0 15px rgba(0, 255, 100, 0.2);
-      display: flex;
-      flex-direction: column;
-      padding: 20px;
-      height: 400px;
-    }
-
-    .messages {
-      flex-grow: 1;
-      overflow-y: auto;
-      text-align: left;
-      margin-bottom: 15px;
-    }
-
-    .messages p {
-      background: #2e8b57;
-      color: #fff;
-      padding: 10px 15px;
-      border-radius: 10px;
-      margin: 8px 0;
-      width: fit-content;
-      max-width: 70%;
-    }
-
-    .input-box {
-      display: flex;
-      gap: 10px;
-    }
-
-    .input-box input {
-      flex-grow: 1;
-      padding: 10px;
-      border-radius: 8px;
-      border: 1px solid #3ca866;
-      background-color: #202020;
-      color: #fff;
-    }
-
-    .input-box button {
-      padding: 10px 20px;
-      border: none;
-      border-radius: 8px;
-      background-color: #4caf50;
-      color: white;
-      cursor: pointer;
-      transition: 0.25s;
-    }
-
-    .input-box button:hover {
-      background-color: #6ee56e;
+      margin-top: 20px;
+      font-size: 18px;
     }
 
     a button {
-      margin-top: 25px;
-      background-color: #2e8b57;
+      margin-top: 40px;
+      background-color: #2a5a2a;
+      color: white;
       border: none;
       padding: 10px 20px;
-      border-radius: 8px;
-      color: #fff;
+      border-radius: 10px;
       cursor: pointer;
-      transition: 0.25s;
+      font-size: 16px;
+      transition: 0.3s;
     }
 
     a button:hover {
-      background-color: #3ca866;
+      background-color: #3f8f3f;
     }
   </style>
 </head>
 <body>
-  <h1>Live Support</h1>
-  <p>Chat with a RatLabs specialist in real time (demo mode)</p>
+  <header>
+    <h1>Live Support</h1>
+  </header>
 
-  <div class="chat-box">
-    <div class="messages" id="messages">
-      <p><strong>RatLabs Bot:</strong> Hey there! How can we help you today?</p>
-    </div>
+  <p>Chat with a RatLabs specialist below. We're here to help you with your custom PC build!</p>
 
-    <div class="input-box">
-      <input type="text" id="userInput" placeholder="Type your message..." />
-      <button onclick="sendMessage()">Send</button>
-    </div>
-  </div>
-
-  <a href="index.html"><button>Go back to home</button></a>
-
-  <script>
-    function sendMessage() {
-      const input = document.getElementById('userInput');
-      const messages = document.getElementById('messages');
-      const text = input.value.trim();
-      if (text !== '') {
-        const msg = document.createElement('p');
-        msg.textContent = text;
-        msg.style.background = '#3ca866';
-        msg.style.marginLeft = 'auto';
-        messages.appendChild(msg);
-        input.value = '';
-        messages.scrollTop = messages.scrollHeight;
-      }
-    }
+  <!-- ✅ Paste your Tawk.to widget below -->
+  <!-- Example (replace this whole block with your widget): -->
+  <script type="text/javascript">
+  <!--Start of Tawk.to Script-->
+<script type="text/javascript">
+var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+(function(){
+var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+s1.async=true;
+s1.src='https://embed.tawk.to/68f471007d479d194d3b7708/1j7tdiqsc';
+s1.charset='UTF-8';
+s1.setAttribute('crossorigin','*');
+s0.parentNode.insertBefore(s1,s0);
+})();
+</script>
+<!--End of Tawk.to Script-->
   </script>
+  <!-- ✅ End Tawk.to embed -->
+
+  <br>
+  <a href="index.html">
+    <button>Go back to home</button>
+  </a>
 </body>
 </html>
