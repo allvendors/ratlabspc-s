@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Custom PC Builder | RatLabs</title>
+  <style>
+    body {
+      background-color: #121212;
+      color: #f4f4f4;
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      padding: 40px 20px;
+      text-align: center;
+    }
+
+    h1 {
+      color: #86ff86;
+      margin-bottom: 15px;
+    }
+
+    p {
+      color: #c8ffc8;
+      margin-bottom: 25px;
+    }
+
+    .builder {
+      background-color: #1c1c1c;
+      border: 1px solid #3ca866;
+      border-radius: 12px;
+      max-width: 600px;
+      margin: 0 auto;
+      padding: 25px;
+      text-align: left;
+      box-shadow: 0 0 15px rgba(0, 255, 100, 0.2);
+    }
+
+    .builder label {
+      display: block;
+      margin-top: 15px;
+      color: #9aff9a;
+      font-weight: bold;
+    }
+
+    .builder select {
+      width: 100%;
+      padding: 10px;
+      margin-top: 6px;
+      border-radius: 8px;
+      border: 1px solid #3ca866;
+      background-color: #202020;
+      color: #fff;
+    }
+
+    .price-box {
+      margin-top: 25px;
+      padding: 15px;
+      text-align: center;
+      background-color: #181818;
+      border-radius: 10px;
+      border: 1px solid #3ca866;
+    }
+
+    .price-box h2 {
+      color: #86ff86;
+    }
+
+    button {
+      margin-top: 25px;
+      background-color: #4caf50;
+      border: none;
+      padding: 12px 20px;
+      border-radius: 8px;
+      color: white;
+      cursor: pointer;
+      font-weight: bold;
+      transition: 0.25s;
+    }
+
+    button:hover {
+      background-color: #6ee56e;
+    }
+  </style>
+</head>
+<body>
+  <h1>Custom PC Builder</h1>
+  <p>Select your desired components and get an instant price estimate.</p>
+
+  <div class="builder">
+    <label for="cpu">Processor (CPU):</label>
+    <select id="cpu">
+      <option value="0">-- Choose a CPU --</option>
+      <option value="350">Intel Core i5-13600K ($350)</option>
+      <option value="520">Intel Core i7-14700K ($520)</option>
+      <option value="690">Intel Core i9-14900K ($690)</option>
+      <option value="330">AMD Ryzen 5 7600 ($330)</option>
+      <option value="470">AMD Ryzen 7 7800X3D ($470)</option>
+      <option value="630">AMD Ryzen 9 7950X ($630)</option>
+    </select>
+
+    <label for="gpu">Graphics Card (GPU):</label>
+    <select id="gpu">
+      <option value="0">-- Choose a GPU --</option>
+      <option value="500">NVIDIA RTX 4060 Ti ($500)</option>
+      <option value="850">NVIDIA RTX 4070 Super ($850)</option>
+      <option value="1200">NVIDIA RTX 4080 Super ($1200)</option>
+      <option value="1600">NVIDIA RTX 4090 ($1600)</option>
+      <option value="400">AMD RX 7800 XT ($400)</option>
+      <option value="550">AMD RX 7900 XT ($550)</option>
+    </select>
+
+    <label for="ram">Memory (RAM):</label>
+    <select id="ram">
+      <option value="0">-- Choose RAM --</option>
+      <option value="80">16GB DDR5 ($80)</option>
+      <option value="150">32GB DDR5 ($150)</option>
+      <option value="270">64GB DDR5 ($270)</option>
+    </select>
+
+    <label for="storage">Storage:</label>
+    <select id="storage">
+      <option value="0">-- Choose Storage --</option>
+      <option value="70">1TB NVMe SSD ($70)</option>
+      <option value="130">2TB NVMe SSD ($130)</option>
+      <option value="250">4TB NVMe SSD ($250)</option>
+    </select>
+
+    <label for="case">PC Case:</label>
+    <select id="case">
+      <option value="0">-- Choose a Case --</option>
+      <option value="100">NZXT H5 Flow ($100)</option>
+      <option value="120">Lian Li O11 Dynamic ($120)</option>
+      <option value="150">Corsair iCUE 5000X ($150)</option>
+    </select>
+
+    <label for="psu">Power Supply:</label>
+    <select id="psu">
+      <option value="0">-- Choose PSU --</option>
+      <option value="80">650W Gold ($80)</option>
+      <option value="110">750W Gold ($110)</option>
+      <option value="150">1000W Platinum ($150)</option>
+    </select>
+
+    <div class="price-box">
+      <h2>Total: $<span id="total">0</span></h2>
+    </div>
+
+    <button onclick="calculateTotal()">Calculate Total</button>
+  </div>
+
+  <a href="index.html"><button>Go back to home</button></a>
+
+  <script>
+    function calculateTotal() {
+      const ids = ["cpu", "gpu", "ram", "storage", "case", "psu"];
+      let total = 0;
+
+      ids.forEach(id => {
+        const val = parseFloat(document.getElementById(id).value);
+        total += isNaN(val) ? 0 : val;
+      });
+
+      document.getElementById("total").textContent = total.toFixed(2);
+    }
+  </script>
+</body>
+</html>
